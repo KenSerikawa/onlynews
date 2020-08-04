@@ -5,14 +5,36 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{asset('/css/custom.css')}}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <form method="POST" action="/search"> 
-            <input type="text" name="query" required>
-            <button type="submit">search</button>
-        </form>
-        {% block body %}{% endblock %}
+        <div class="container">
+            <nav class="navbar navbar-expand-sm">
+                <div class="row w-100">
+                    <div class="col-5">
+                        <a href="{{path('index')}}" class="text-decoration-none">
+                            {# <img class="img-fluid navbar-brand" src="{{asset('/images/globe.png')}}"> #}
+                            <div class="bg-danger p-2 text-white border rounded d-inline-block">
+                                <h1 class="m-0 text-right font-weight-bold h4">
+                                    ONLY
+                                    <span class="bg-white text-danger pr-1 p-1 align-middle my-auto">NEWS</span>
+                                </h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-7 float-right align-middle my-auto">
+                        <form method="POST" action="/search"
+                            class="form-inline my-2 float-right"> 
+                            <input class="border-danger rounded-left" type="text" name="query" required>
+                            <button class="btn-outline-danger my-2 my-sm-0 rounded-right font-weight-bold" type="submit">↵</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            
+            {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

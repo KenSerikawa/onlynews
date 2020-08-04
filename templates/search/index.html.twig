@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SearchController!{% endblock %}
+
+{% macro displayArticles(articles) %}
+    {% for article in articles %}
+        <div class="container">
+            <a href="{{article.url}}" target="_blank">
+                <h1>{{article.title}}</h1>
+                <h3>{{article.description}}</h3>
+                <em>Escrito por {{article.author}}</em>
+                <span>{{article.publishedAt}}</span>
+                <p>{{article.content}}</p>
+                <p>{{article.source.name}}</p>
+                <img src="{{article.urlToImage}}">
+            </a>
+        </div>
+    {% endfor %}
+{% endmacro %}
+{% block body %}
+    {{_self.displayArticles(results.articles)}}
+{% endblock %}

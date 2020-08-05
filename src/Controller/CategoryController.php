@@ -9,7 +9,7 @@ use App\Service\SourceCategoryFinder;
 class CategoryController extends AbstractController
 {
     private $sources;
-    
+
     public function __construct(SourceCategoryFinder $sourceCategoryFinder)
     {
         $this->sources = $sourceCategoryFinder;
@@ -20,15 +20,14 @@ class CategoryController extends AbstractController
             'sources' => $this->sources->__invoke('business')['sources']
         ]);
     }
-    public function getEntertaiment()
+    public function getEntertainment()
     {
         return $this->render('news/index.html.twig', [
-            'sources' => $this->sources->__invoke('entertaiment')['sources']
+            'sources' => $this->sources->__invoke('entertainment')['sources']
         ]);
     }
     public function getHealth()
     {
-        $sources = '';
         return $this->render('news/index.html.twig', [
             'sources' => $this->sources->__invoke('health')['sources']
         ]);

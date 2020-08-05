@@ -7,9 +7,9 @@ search:
 category.business:
     path: /business
     controller: App\Controller\CategoryController::getBusiness
-category.entertaiment:
-    path: /entertaiment
-    controller: App\Controller\CategoryController::getEntertaiment
+category.entertainment:
+    path: /entertainment
+    controller: App\Controller\CategoryController::getEntertainment
 category.health:
     path: /health
     controller: App\Controller\CategoryController::getHealth

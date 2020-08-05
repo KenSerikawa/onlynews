@@ -2,6 +2,52 @@
 
 {% block title %}OnlyNews{% endblock %}
 
+{% macro displayGeneralSources(sources) %}
+    {% for source in sources %}
+        <div class="card w-100">
+            <div class="card-body">
+                <a class="text-decoration-none text-dark"
+                    href="{{source.url}}">
+                    <h3 class="h4">{{source.name}}</h3>
+                    <h3 class="h6">{{source.description}}</h3>
+                </a>
+            </div>  
+        </div>
+    {% endfor %}
+{% endmacro %}
+{% macro displayCategories() %}
+    <div class="row p-3">
+        <a href="/" 
+            class="rounded-left btn-outline-danger my-2 px-2 py-1 border border-danger">
+                General
+        </a>
+        <a href="/business" 
+            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Business
+        </a>
+        <a href="/entertaiment" 
+            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Entertaiment
+        </a>
+        <a href="/health" 
+            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Health
+        </a>
+        <a href="/science" 
+            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Science
+        </a>
+        <a href="/sports" 
+            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Sports
+        </a>
+        <a href="/tech" 
+            class="rounded-right btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Technology
+        </a>
+    </div>
+{% endmacro %}
 {% block body %}
-
+{{_self.displayCategories()}}
+{{_self.displayGeneralSources(sources)}}
 {% endblock %}

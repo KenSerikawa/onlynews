@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}OnlyNews{% endblock %}
+{% block title %}OnlyNews | {{sources[0].category|capitalize}}{% endblock %}
 
 {% macro displayGeneralSources(sources) %}
     {% for source in sources %}

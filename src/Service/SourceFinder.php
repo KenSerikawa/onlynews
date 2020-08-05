@@ -14,7 +14,7 @@ final class SourceFinder
     }
     public function __invoke()
     {
-        $url = 'http://newsapi.org/v2/sources?language=en&apiKey=' . $this->apikey;
+        $url = 'http://newsapi.org/v2/sources?pageSize=99&apiKey=' . $this->apikey;
         
         return json_decode(file_get_contents($url), true);
     }

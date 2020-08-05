@@ -13,6 +13,11 @@ body {
         rgba(255, 255, 255, 0.897), 
         rgba(212, 212, 212, 0.466));
 }
+.brand, .category-button:hover  {
+    -webkit-box-shadow: 20px 20px 15px -7px rgba(255,97,126,.3);
+    -moz-box-shadow: 0px 20px 15px -7px rgba(255,97,126,.3);
+    box-shadow: 0px 20px 15px -7px rgba(255,97,126,.3);
+}
 
 img.article-img {
     width: 50%;

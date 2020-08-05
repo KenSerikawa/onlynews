@@ -14,7 +14,7 @@ final class HeadlineFinder
     }
     public function __invoke()
     {
-        $url = 'http://newsapi.org/v2/top-headlines?country=es&pageSize=&apiKey=' . $this->apikey;
+        $url = 'http://newsapi.org/v2/top-headlines?country=us&pageSize=99&apiKey=' . $this->apikey;
         
         return json_decode(file_get_contents($url), true);
     }

@@ -13,14 +13,14 @@ use App\Service\HeadlineFinder;
 class HeadlineController extends AbstractController
 {
     private $sources;
-    public function __construct(HeadlineFinder $sfinder)
+    public function __construct(HeadlineFinder $headlineFinder)
     {
-        $this->sources = $sfinder->__invoke();
+        $this->sources = $headlineFinder->__invoke();
     }
     public function index()
     {       
-        return $this->render('news/index.html.twig', [
-            'sources' => $this->sources['sources']
+        return $this->render('search/index.html.twig', [
+            'results' => $this->sources
         ]);
     }
 }

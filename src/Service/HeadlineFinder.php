@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-final class SourceFinder
+final class HeadlineFinder
 {
     private $apikey;
 
@@ -14,7 +14,7 @@ final class SourceFinder
     }
     public function __invoke()
     {
-        $url = 'http://newsapi.org/v2/sources?pageSize=99&apiKey=' . $this->apikey;
+        $url = 'http://newsapi.org/v2/top-headlines?country=es&pageSize=&apiKey=' . $this->apikey;
         
         return json_decode(file_get_contents($url), true);
     }

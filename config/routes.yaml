@@ -1,9 +1,12 @@
 index:
     path: /
-    controller: App\Controller\RootController::index
+    controller: App\Controller\HeadlineController::index
 search:
     path: /search
     controller: App\Controller\SearchController
+category.general:
+    path: /general
+    controller: App\Controller\CategoryController::getGeneral
 category.business:
     path: /business
     controller: App\Controller\CategoryController::getBusiness

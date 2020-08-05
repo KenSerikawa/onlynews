@@ -14,6 +14,12 @@ class CategoryController extends AbstractController
     {
         $this->sources = $sourceCategoryFinder;
     }
+    public function getGeneral()
+    {
+        return $this->render('news/index.html.twig', [
+            'sources' => $this->sources->__invoke('general')['sources']
+        ]);
+    }
     public function getBusiness()
     {
         return $this->render('news/index.html.twig', [

@@ -4,3 +4,21 @@ index:
 search:
     path: /search
     controller: App\Controller\SearchController
+category.business:
+    path: /business
+    controller: App\Controller\CategoryController::getBusiness
+category.entertaiment:
+    path: /entertaiment
+    controller: App\Controller\CategoryController::getEntertaiment
+category.health:
+    path: /health
+    controller: App\Controller\CategoryController::getHealth
+category.science:
+    path: /science
+    controller: App\Controller\CategoryController::getScience
+category.sports:
+    path: /sports
+    controller: App\Controller\CategoryController::getSports
+category.tech:
+    path: /tech
+    controller: App\Controller\CategoryController::getTech

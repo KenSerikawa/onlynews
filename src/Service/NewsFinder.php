@@ -15,7 +15,7 @@ final class NewsFinder
     public function __invoke(string $query='')
     {
         $query = str_replace(' ', '+', $query);
-        $url = 'http://newsapi.org/v2/everything?q=' . $query . '&language=en&apiKey=' . $this->apikey;
+        $url = 'http://newsapi.org/v2/everything?q=' . $query . '&sortBy=publishedAt&pageSize=99&apiKey=' . $this->apikey;
         
         return json_decode(file_get_contents($url), true);
     }

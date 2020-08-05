@@ -17,44 +17,9 @@
     {% endfor %}
 {% endmacro %}
 
-{% macro displayCategories() %}
-    <div class="row p-3 d-flex justify-content-center">
-        <a href="/" id="/"
-            class="rounded-left btn-outline-danger my-2 px-2 py-1 border border-danger">
-                General
-        </a>
-        <a href="/business" id="/business"
-            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Business
-        </a>
-        <a href="/entertainment" id="/entertainment"
-            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Entertainment
-        </a>
-        <a href="/health" id="/health"
-            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Health
-        </a>
-        <a href="/science" id="/science" 
-            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Science
-        </a>
-        <a href="/sports" id="/sports" 
-            class="btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Sports
-        </a>
-        <a href="/tech" id="/tech"
-            class="rounded-right btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Technology
-        </a>
-    </div>
-{% endmacro %}
-
 {% set currentPath = path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) %}
 
 {% block body %}
-    {{_self.displayCategories()}}
-    {{dump(sources)}}
     {{_self.displayGeneralSources(sources)}}
 {% endblock %}
 
@@ -64,5 +29,6 @@
         selectedPath.classList.add('bg-danger')
         selectedPath.classList.add('text-white')
         selectedPath.classList.add('w-25')
+        selectedPath.classList.add('brand')
     </script>
 {% endblock %}

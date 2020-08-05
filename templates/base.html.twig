@@ -1,4 +1,36 @@
 <!DOCTYPE html>
+{% macro displayCategories() %}
+    <div class="row p-3 d-flex justify-content-center">
+        <a href="/" id="/" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
+            class="category-button rounded-left btn-outline-danger my-2 px-2 py-1 border border-danger">
+                General
+        </a>
+        <a href="/business" id="/business" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
+            class="category-button btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Business
+        </a>
+        <a href="/entertainment" id="/entertainment" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
+            class="category-button btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Entertainment
+        </a>
+        <a href="/health" id="/health" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
+            class="category-button btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Health
+        </a>
+        <a href="/science" id="/science"  onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
+            class="category-button btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Science
+        </a>
+        <a href="/sports" id="/sports"  onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
+            class="category-button btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Sports
+        </a>
+        <a href="/tech" id="/tech" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
+            class="category-button rounded-right btn-outline-danger my-2 px-2 py-1 border border-danger">
+                Technology
+        </a>
+    </div>
+{% endmacro %}
 <html>
     <head>
         <meta charset="UTF-8">
@@ -15,7 +47,7 @@
                     <div class="col-5">
                         <a href="{{path('index')}}" class="text-decoration-none">
                             {# <img class="img-fluid navbar-brand" src="{{asset('/images/globe.png')}}"> #}
-                            <div class="bg-danger p-2 text-white border rounded d-inline-block">
+                            <div class="bg-danger p-2 text-white border rounded d-inline-block brand">
                                 <h1 class="m-0 text-right h4">
                                     ONLY
                                     <span class="bg-white border rounded text-danger pr-1 pl-1 my-auto font-weight-bold">NEWS</span>
@@ -36,9 +68,11 @@
                     </div>
                 </div>
             </nav>
-            
+            {{_self.displayCategories()}}
             {% block body %}{% endblock %}
         </div>
-        {% block javascripts %}{% endblock %}
+        <script src="{{asset('/js/button-animation.js')}}"></script>
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>

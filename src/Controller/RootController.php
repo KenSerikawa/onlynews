@@ -8,13 +8,19 @@ use App\Service\NewsFinder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use App\Service\SourceFinder;
 
 class RootController extends AbstractController
 {
-    public function index(Request $request)
+    private $sources;
+    public function __construct(SourceFinder $sfinder)
     {
+        $this->sources = $sfinder->__invoke();
+    }
+    public function index()
+    {       
         return $this->render('news/index.html.twig', [
-           
+            'sources' => $this->sources['sources']
         ]);
     }
 }

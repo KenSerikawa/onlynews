@@ -4,7 +4,11 @@ html, body {
 }
 
 body {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.897), rgba(188, 186, 255, 0.466));
+    background-image: linear-gradient(
+        to right, 
+        rgba(212, 212, 212, 0.466), 
+        rgba(255, 255, 255, 0.897), 
+        rgba(212, 212, 212, 0.466));
 }
 
 img.article-img {

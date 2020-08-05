@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-final class NewsFinder
+final class SourceFinder
 {
     private $apikey;
 
@@ -12,10 +12,9 @@ final class NewsFinder
     {
         $this->apikey = $_ENV['NEWS_API_KEY'];
     }
-    public function __invoke(string $query='')
+    public function __invoke()
     {
-        $query = str_replace(' ', '+', $query);
-        $url = 'http://newsapi.org/v2/everything?q=' . $query . '&language=en&apiKey=' . $this->apikey;
+        $url = 'http://newsapi.org/v2/sources?language=en&apiKey=' . $this->apikey;
         
         return json_decode(file_get_contents($url), true);
     }

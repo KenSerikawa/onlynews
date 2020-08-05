@@ -14,7 +14,7 @@ final class SourceCategoryFinder
     }
     public function __invoke(string $category)
     {
-        $url = 'http://newsapi.org/v2/sources?category=' . $category . '&apiKey=' . $this->apikey;
+        $url = 'http://newsapi.org/v2/sources?category=' . $category . '&pageSize=99&apiKey=' . $this->apikey;
         
         return json_decode(file_get_contents($url), true);
     }

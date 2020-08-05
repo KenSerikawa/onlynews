@@ -4,6 +4,9 @@ index:
 search:
     path: /search
     controller: App\Controller\SearchController
+source:
+    path: /source/{source}
+    controller: App\Controller\SourceController
 category.general:
     path: /general
     controller: App\Controller\CategoryController::getGeneral

@@ -13,7 +13,9 @@
                     <br>
                     <span>{{article.publishedAt}}</span>
                     {# <p>{{    article.content}}</p> #}
-                    <a href="{{article.url}}" class="text-decoration-none text-dark" target="_blank">
+                    <a href="{{article.url}}"
+                        {# href="{{path('source', {source: article.source.name|trim})}}" #} 
+                        class="text-decoration-none text-dark" target="_blank">
                         <p class="text-danger">{{article.source.name}}</p>
                     </a>
                 </div>
@@ -23,8 +25,7 @@
                     src="{{article.urlToImage}}">
             {% endif %}
             <div class="card-header d-flex flex-column align-items-start text-danger">
-                X
-                S
+                <span>&times;</span>
             </div>
         </div>
     {% endfor %}

@@ -16,19 +16,19 @@
                         <a href="{{path('index')}}" class="text-decoration-none">
                             {# <img class="img-fluid navbar-brand" src="{{asset('/images/globe.png')}}"> #}
                             <div class="bg-danger p-2 text-white border rounded d-inline-block">
-                                <h1 class="m-0 text-right font-weight-bold h4">
+                                <h1 class="m-0 text-right h4">
                                     ONLY
-                                    <span class="bg-white text-danger pr-1 p-1 align-middle my-auto">NEWS</span>
+                                    <span class="bg-white border rounded text-danger pr-1 pl-1 my-auto font-weight-bold">NEWS</span>
                                 </h1>
                             </div>
                         </a>
                     </div>
-                    <div class="col-7 float-right align-middle my-auto">
+                    <div class="col-7 float-right align-middle my-auto pr-0">
                         <form method="POST" action="/search"
                             class="form-inline my-2 float-right"> 
-                            <input class="border-danger rounded-left" type="text" name="query" 
+                            <input class="border-danger rounded-left p-1" type="text" name="query" 
                                 placeholder="search by keyword" required>
-                            <button class="btn-outline-danger text-white bg-danger my-2 my-sm-0 rounded-right font-weight-bold" 
+                            <button class="btn-outline-danger text-white bg-danger my-2 my-sm-0 p-1 rounded-right font-weight-bold" 
                                 type="submit"> 
                                 ↵
                             </button>

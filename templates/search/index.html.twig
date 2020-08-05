@@ -6,17 +6,17 @@
     {% for article in articles %}
         <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-                <a href="{{article.url}}" class="text-decoration-none text-dark" target="_blank">
-                    <div class="p-3">
-                        <h1 class="h3 font-weight-bold">{{article.title}}</h1>
-                        <h2 class="h5">{{article.description}}</h2>
-                        <em>Escrito por {{article.author}}</em>
-                        <br>
-                        <span>{{article.publishedAt}}</span>
-                            {# <p>{{article.content}}</p> #}
+                <div class="p-3">
+                    <h1 class="h3 font-weight-bold">{{article.title}}</h1>
+                    <h2 class="h5">{{article.description}}</h2>
+                    <em>Escrito por {{article.author}}</em>
+                    <br>
+                    <span>{{article.publishedAt}}</span>
+                    {# <p>{{    article.content}}</p> #}
+                    <a href="{{article.url}}" class="text-decoration-none text-dark" target="_blank">
                         <p class="text-danger">{{article.source.name}}</p>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
             {% if article.urlToImage is defined and article.urlToImage != null %}
                 <img class="article-img p-2 pr-3 card-img-right flex-auto d-none d-md-block border-danger rounded align-middle my-auto" 

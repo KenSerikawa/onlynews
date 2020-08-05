@@ -6,10 +6,11 @@
     {% for source in sources %}
         <div class="card w-100 mb-2">
             <div class="card-body">
+                <h3 class="display-5">{{source.name}}</h3>
+                <h3 class="h4">{{source.description}}</h3>
                 <a class="text-decoration-none text-dark"
                     href="{{source.url}}">
-                    <h3 class="h4">{{source.name}}</h3>
-                    <h3 class="h6">{{source.description}}</h3>
+                    <h3 class="h6 text-danger" >{{source.url}}</h3>
                 </a>
             </div>  
         </div>
@@ -53,6 +54,7 @@
 
 {% block body %}
     {{_self.displayCategories()}}
+    {{dump(sources)}}
     {{_self.displayGeneralSources(sources)}}
 {% endblock %}
 

@@ -4,16 +4,17 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Service\SourceCategoryFinder;
+use App\Service\CategoryFinder;
 
 class CategoryController extends AbstractController
 {
     private $sources;
 
-    public function __construct(SourceCategoryFinder $sourceCategoryFinder)
+    public function __construct(CategoryFinder $CategoryFinder)
     {
-        $this->sources = $sourceCategoryFinder;
+        $this->sources = $CategoryFinder;
     }
+    
     public function getGeneral()
     {
         return $this->render('news/index.html.twig', [

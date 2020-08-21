@@ -27,17 +27,14 @@ img.article-img {
 #content {
     z-index: 1000;
     background-color: transparent;
-    position: absolute;
-    top: 0;
-    left: 20%;
-    right: 25%;
     margin-right: auto;
     margin-left: auto;
 }
 
 #svg {
-    z-index: 0;
-    position: relative;
+    z-index: -1;
+    top: 0;
+    position: absolute;
     background: linear-gradient(135deg, #ffffff 0%,  #df9093 100%);
 }
 

@@ -42,7 +42,7 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <div class="container">
+        <div id="content" class="container">
             <nav class="navbar navbar-expand-sm">
                 <div class="row w-100">
                     <div class="col-5">
@@ -72,6 +72,9 @@
             {{_self.displayCategories()}}
             {% block body %}{% endblock %}
         </div>
+        <div id="svg"></div>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="{{asset('/js/background-svg.js')}}"></script>
         <script src="{{asset('/js/button-animation.js')}}"></script>
         {% block javascripts %}
         {% endblock %}

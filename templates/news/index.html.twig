@@ -20,6 +20,7 @@
 {% set currentPath = path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) %}
 
 {% block body %}
+    {% include "category/navbar.html.twig" %}
     {{_self.displayGeneralSources(sources)}}
 {% endblock %}
 

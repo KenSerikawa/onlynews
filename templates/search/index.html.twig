@@ -38,6 +38,7 @@
 {% endmacro %}
 
 {% block body %}
+    {% include "category/navbar.html.twig" %}
     {{_self.displayArticles(results.articles)}}
 {% endblock %}
 

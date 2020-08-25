@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var height = Math.max( body.scrollHeight, body.offsetHeight, 
                         html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-    var n = 300;
+    var n = 50;
 
     var svg = d3.select("#svg")
         .append("svg")

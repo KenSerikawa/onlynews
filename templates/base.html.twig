@@ -1,36 +1,4 @@
 <!DOCTYPE html>
-{% macro displayCategories() %}
-    <div class="row p-3 d-flex justify-content-center">
-        <a href="/general" id="/general" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
-            class="category-button text-decoration-none rounded-left btn-outline-danger my-2 px-2 py-1 border border-danger">
-                General
-        </a>
-        <a href="/business" id="/business" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
-            class="category-button text-decoration-none btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Business
-        </a>
-        <a href="/entertainment" id="/entertainment" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
-            class="category-button text-decoration-none btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Entertainment
-        </a>
-        <a href="/health" id="/health" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
-            class="category-button text-decoration-none btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Health
-        </a>
-        <a href="/science" id="/science"  onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
-            class="category-button text-decoration-none btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Science
-        </a>
-        <a href="/sports" id="/sports"  onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
-            class="category-button text-decoration-none btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Sports
-        </a>
-        <a href="/tech" id="/tech" onmouseover="toggleSelected(this)" onmouseout="undoToggling(this)"
-            class="category-button text-decoration-none rounded-right btn-outline-danger my-2 px-2 py-1 border border-danger">
-                Technology
-        </a>
-    </div>
-{% endmacro %}
 <html>
     <head>
         <meta charset="UTF-8">
@@ -57,23 +25,28 @@
                         </a>
                     </div>
                     <div class="col-7 float-right align-middle my-auto pr-0">
+                        {% if app.user is not null %}
+                            {{dump(app.user)}}
+                            {# Display user dropdown #}
+                            {% else %}
+                            <form class="form-inline my-2 float-right" action="{{path('app_login')}}">
+                                <input type="submit"
+                                    class="btn-outline-danger text-white bg-danger my-2 my-sm-0 ml-1 p-1 rounded font-weight-bold" 
+                                    value="Login"/>
+                            </form>
+                        {% endif %}
                         <form method="POST" action="/search"
                             class="form-inline my-2 float-right"> 
                             <input class="border-0 bg-transparent p-1" type="text" name="query" 
                                 placeholder="search by keyword" required>
-                            <button class="btn-outline-danger text-white bg-danger my-2 my-sm-0 p-1 rounded font-weight-bold" 
+                            <button class="btn-outline-danger text-white bg-danger my-2 my-sm-0 p-1 rounded-right font-weight-bold" 
                                 type="submit"> 
                                 ↵
                             </button>
-                            <a role="button" href="{{path('app_login')}}"
-                                class="btn-outline-danger text-white bg-danger my-2 my-sm-0 p-1 rounded font-weight-bold">
-                                Login
-                            </a>
                         </form>
                     </div>
                 </div>
             </nav>
-            {{_self.displayCategories()}}
             {% block body %}{% endblock %}
         </div>
         <div id="svg"></div>

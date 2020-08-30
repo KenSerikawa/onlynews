@@ -2,4 +2,4 @@
 
 Search engine based on [NewsAPI](https://newsapi.org) service
 
-Future improvements incoming soon
+Future improvements incoming

@@ -2,4 +2,8 @@
 
 Search engine based on [NewsAPI](https://newsapi.org) service
 
-Future improvements incoming soon
+## Updates 
+- Basic user system
+- News and sources divided by categories 
+  
+Future improvements coming soon

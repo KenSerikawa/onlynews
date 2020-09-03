@@ -28,7 +28,11 @@
                         {% if app.user is not null %}
                             {# {{dump(app.user)}} #}
                   
-                            <div class="pl-4 my-auto float-right">{{app.user.email}}</div>
+                            <div class="pl-4 my-2 float-right">
+                            
+                                <a role="button" href="{{path('user_show', {id: app.user.id})}}" class="btn btn-outline-danger">{{app.user.email}}</a>
+                            
+                            </div>
 
                             {# Display user dropdown #}
                             {% else %}
@@ -40,7 +44,7 @@
                         {% endif %}
                         <form method="POST" action="/search"
                             class="form-inline my-2 float-right"> 
-                            <input class="border-0 bg-transparent p-1" type="text" name="query" 
+                            <input class="border bg-transparent border-2 border-danger p-1" type="text" name="query" 
                                 placeholder="search by keyword" required>
                             <button class="btn-outline-danger text-white bg-danger my-2 my-sm-0 p-1 rounded-right font-weight-bold" 
                                 type="submit"> 

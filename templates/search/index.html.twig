@@ -10,9 +10,13 @@
                 <div class="p-3">
                     <h1 class="h3 font-weight-bold">{{article.title}}</h1>
                     <h2 class="h5">{{article.description}}</h2>
-                    <em>Escrito por {{article.author}}</em>
                     <br>
-                    <span>{{article.publishedAt}}</span>
+                    <span>{{article.publishedAt|date()}}</span>
+                    <br>
+                    {% if article.author is not empty %}
+                    <em>By {{article.author}}</em>
+                    {% endif %}
+                    
                     {# <p>{{    article.content}}</p> #}
                     <a href="{{article.url}}"
                         {# href="{{path('source', {source: article.source.name|trim})}}" #} 

@@ -7,7 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var height = Math.max( body.scrollHeight, body.offsetHeight, 
                         html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-    var n = 50;
+    console.log(width, height)
+    if(height < 1200) {
+        var n = 10;
+    } else {
+        var n = 100;
+    }
 
     var svg = d3.select("#svg")
         .append("svg")

@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(width, height)
     if(height < 1200) {
         var n = 10;
+    } else if(height > 1200 && height < 4000) {
+        var n = 30;
     } else {
-        var n = 100;
+        var n = 130;
     }
 
     var svg = d3.select("#svg")

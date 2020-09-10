@@ -7,6 +7,9 @@ search:
 source:
     path: /source/{source}
     controller: App\Controller\SourceController
+source.language:
+    path: /source/language/{lang}
+    controller: App\Controller\SourceController::getOnlyByLang
 category.general:
     path: /general
     controller: App\Controller\CategoryController::getGeneral

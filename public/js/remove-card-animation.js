@@ -1,8 +1,8 @@
 function removeCard(id) {
     let card = $("#" + id)
     card.animate({
-        opacity: 0.25,
-        left: "+=50",
+        opacity: 0.1,
+        left: "+=5000",
         height: "toggle"
       })
 }

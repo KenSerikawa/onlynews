@@ -33,9 +33,12 @@
                 <a style="cursor:pointer;" title="Remove report" onclick="removeCard({{id}})" class="btn-option mx-auto">
                     <i class="fas fa-times fa-lg"></i>
                 </a>
+                {% if app.user is not null %}
                 <a style="cursor:pointer;" title="Save report" onclick="" class="btn-option mx-auto mt-2">
                     <i class="fas fa-arrow-down fa-lg"></i>
                 </a>
+                {% endif %}
+                
                 <a style="cursor:pointer;" title="Share" onclick="" class="btn-option mx-auto mt-2">
                     <i class="fas fa-share-alt fa-lg"></i>
                 </a>

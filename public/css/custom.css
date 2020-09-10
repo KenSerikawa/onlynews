@@ -73,6 +73,7 @@ body::-webkit-scrollbar-thumb
 
 .card-header {
     background-color: rgba(0,0,0,.01);
+    border-bottom: none !important;
 }
 
 .card {
@@ -81,8 +82,9 @@ body::-webkit-scrollbar-thumb
     -o-transition: background-color 2s ease-out;
     transition: background-color 2s ease-out;
 }
+
 .card:hover {
-    background-color: rgba(235, 143, 143, 0.219);
+    background-color: rgba(255, 144, 144, 0.541);
     animation: shake  2.5s infinite;
 }
 
@@ -92,6 +94,16 @@ body::-webkit-scrollbar-thumb
     50% { transform: rotate(.2deg); }
     75% { transform: rotate(-.1deg); }
    100% { transform: rotate(0deg); }
+}
+
+.dropdown-buttom-custom {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .flashing {

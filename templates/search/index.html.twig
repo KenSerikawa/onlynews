@@ -5,7 +5,7 @@
 {% macro displayArticles(articles) %}
     {% set id = 0 %}
     {% for article in articles %}
-        <div id="{{id}}" onmouseover="highlight(this)"  onmouseout="readjust()"
+        <div id="{{id}}" onmouseover="highlight(this)"  onmouseout="readjust(this)"
             class="blurred card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
                 <div class="p-3">
@@ -39,10 +39,16 @@
                     <i class="fas fa-arrow-down fa-lg"></i>
                 </a>
                 {% endif %}
-                
-                <a style="cursor:pointer;" title="Share" onclick="" class="btn-option mx-auto mt-2">
+
+                <div class="btn-group dropleft">
+                    <a   style="cursor:pointer;" title="Share" onclick="" class="btn-option mx-auto mt-2 dropdown-button-custom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-share-alt fa-lg"></i>
-                </a>
+
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" onclick="copyLink()">Copy url</a>
+                    </div>
+                </div>
             </div>
         </div>
         {% set id = id + 1 %}

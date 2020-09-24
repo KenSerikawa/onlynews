@@ -1,5 +1,4 @@
 # OnlyNews
-
 Search engine based on [NewsAPI](https://newsapi.org)service
 
 ## Updates 
